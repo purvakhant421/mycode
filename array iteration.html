@@ -1,0 +1,86 @@
+<!-- Using array iteration create examples ( min 8 iteration use ) -->
+<script>
+
+    //foreach function
+    //The forEach() method calls a function (a callback function) once for each array element.
+    const numbers = [56, 67, 90, 34, 23];
+    document.write("<h4>#forEach</h4>");
+    let txt = "";
+    numbers.forEach(myFunction);
+
+   function myFunction(number, index, array) {
+    txt += number + " ";
+    }
+    document.write(txt + "<br>");
+
+
+    //map function
+    //The map() method creates a new array by performing a function on each array element.
+    const num = [56,34,67,23,90,20];
+    document.write("<h4>#map</h4>");    
+    let tex = "";
+    let ans = num.map(myFunction1);
+    function myFunction1(value, index, array) {
+        return value * 2;   
+    }
+    document.write(ans+"</br>");
+
+    //filter function
+    //The filter() method creates a new array with array elements that pass a test.
+    const numbers1 = [56,57,78,23,21,20];
+    document.write("<h4>#filter</h4>");   
+    let tet = "";
+    let anss = numbers1.filter(myFunction2);
+    function myFunction2(value, index, array) {
+        return value > 50;
+    }
+    document.write("50 up value find in array :-"+anss);
+
+
+    //flatMap() function
+    //The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
+    const myArr = [1, 2, 3, 4, 5,6];
+    document.write("<h4>#flatMap</h4>");  
+    const newArr = myArr.flatMap((x) => x * 2);
+    document.write(newArr);
+
+
+    //reduce() function
+    //The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+    const numbers2 = [45, 4, 9, 16, 25];
+    let sum = numbers2.reduce(myFunction3);
+    document.write("<h4>#reduce()</h4>");   
+    function myFunction3(total, value, index, array) {
+    return total + value;
+   }
+   document.write("The sum is"+sum);
+
+
+    //indexOf() function
+    //The indexOf() method searches an array for an element value and returns its position.
+    const fruits = ["Apple", "Orange", "Apple", "Mango"];
+    document.write("<h4>#indexOf()</h4>"); 
+    let position = fruits.indexOf("Apple") + 1;
+    document.write(" The Apple position "+position);
+
+
+    //lastIndexOf() function
+    //Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.
+    const fruits1 = ["Apple", "Orange", "Apple", "Mango"];
+    document.write("<h4>#lastIndexOf()</h4>"); 
+    let position1 = fruits.lastIndexOf("Apple") + 1;
+    document.write("The Apple position "+position1);
+
+
+    //find() function
+    //The find() method returns the value of the first array element that passes a test function.
+    const numbers4 = [4, 9, 16, 25, 29];
+    let first = numbers4.find(myFunction4);
+    document.write("<h4>#find()</h4>"); 
+
+    function myFunction4(value, index, array) {
+  return value > 18;
+}
+document.write("First number over 18 is "+first);
+
+</script>
